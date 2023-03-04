@@ -94,7 +94,7 @@ if __name__ == "__main__":
     while check_pwd:
         check_pswd_strength()
         check_pwd = check_pswd(True)
-    
+
 
         
 
