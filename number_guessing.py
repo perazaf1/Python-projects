@@ -6,8 +6,6 @@ if __name__ == "__main__":
 number = random.randrange(1,20)
 # choix du chiffre
 guess = int(input("Entrez un nombre : "))
-
-
 # boucle pour deviner le chiffre
 while number != guess :
     if guess < number :
