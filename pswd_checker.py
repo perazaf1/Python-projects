@@ -64,7 +64,7 @@ def check_pswd_strength():
     print(f'{num_count} nombres')
     print(f'{wspace_count} espaces')
     print(f'{special_count} caractères spéciaux')
-    print(f'Score du mot de passe : {strength / 5}')
+    print(f'Score du mot de passe : {strength }/ 5')
     print(f' Remarque : {remarks}')
 
 def check_pswd (another_pswd = False):
