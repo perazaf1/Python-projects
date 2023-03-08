@@ -1,6 +1,7 @@
 import math
 import random
-
+if __name__ == "__main__":
+    print('===== Bienvenue sur le jeu Guess the Number =====')
 # importer les chiffres à deviner
 number = random.randrange(1,20)
 # choix du chiffre
@@ -20,9 +21,7 @@ while number != guess :
     else :
         # le cas est bon 
         break
-    
+
 print("Vous l'avez deviné parfaitement !")
-
-
 
 
