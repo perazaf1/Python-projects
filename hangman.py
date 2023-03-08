@@ -11,3 +11,5 @@ print ("Prépare-toi... \nJouons au pendu !")
 time.sleep(1.5)
 
 
+
+
