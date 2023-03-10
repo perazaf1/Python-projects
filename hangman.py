@@ -41,7 +41,7 @@ def play_loop():
     elif play_game == "n":
         print("Merci d'avoir joué ! A bientôt !")
         exit()
-    
+
 
 
 
