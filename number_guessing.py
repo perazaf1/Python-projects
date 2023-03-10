@@ -18,5 +18,4 @@ while number != guess:
     else:
         # le cas est bon
         break
-pr
-int("Vous l'avez deviné parfaitement !")
+print("Vous l'avez deviné parfaitement !")
