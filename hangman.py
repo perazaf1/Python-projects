@@ -1,14 +1,5 @@
-import math
 import random
 import time
-
-# Début du jeu :
-print ('=== Bienvenue sur le jeu du pendu ===')
-name = input("Entrez votre nom : ")
-print(f'Bonjour {name}, je te souhaite une bonne chance ! ')
-time.sleep (1.5)
-print ("Prépare-toi... \nJouons au pendu !")
-time.sleep(1.5)
 
 def main():
     # déclaration des variables pour le jeu
@@ -41,6 +32,110 @@ def play_loop():
     elif play_game == "n":
         print("Merci d'avoir joué ! A bientôt !")
         exit()
+
+# Initialisation des conditions 
+def hangman():
+    global count
+    global display
+    global word
+    global already_guessed
+    global play_game
+    limit = 5
+    guess = input("C'est le mot du pendu : " + display + "Entrez votre choix : \n")
+    guess = guess.strip()
+    if len(guess.strip()) == 0 or len(guess.strip()) >= 2 or guess <= "9":
+        print("Mauvaischoix, Essaye une letrre \n")
+        hangman()
+    
+    elif guess in word :
+        already_guessed.extend([guess])
+        index = word.find(guess)
+        word = word [:index] = "_" + word[index + 1:]
+        display = display [:index] + guess + display [index + 1:]
+        print(display + "\n")
+
+    elif guess in already_guessed :
+        print("Essaye une autre lettre \n")
+    
+    else :
+        count += 1
+        #Comptage des pendus 
+
+        if count == 1 :
+            time.sleep(0.7)
+            print("   _____ \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "__|__\n")
+            print("Mauvais choix. " + str(limit - count) + " choix restants\n")
+
+        elif count == 2:
+            time.sleep(0.7)
+            print("   _____ \n"
+                  "  |     | \n"
+                  "  |     |\n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "__|__\n")
+            print("Mauvaix choix. " + str(limit - count) + "choix restants\n")
+
+        elif count == 3:
+           time.sleep(0.7)
+           print("   _____ \n"
+                 "  |     | \n"
+                 "  |     |\n"
+                 "  |     | \n"
+                 "  |      \n"
+                 "  |      \n"
+                 "  |      \n"
+                 "__|__\n")
+           print("Mauvaix choix. " + str(limit - count) + " choix restants\n")
+
+        elif count == 4:
+            time.sleep(0.7)
+            print("   _____ \n"
+                  "  |     | \n"
+                  "  |     |\n"
+                  "  |     | \n"
+                  "  |     O \n"
+                  "  |      \n"
+                  "  |      \n"
+                  "__|__\n")
+            print("Mauvaix choix. " + str(limit - count) + " dernier essai !\n")
+
+        elif count == 5:
+            time.sleep(0.7)
+            print("   _____ \n"
+                  "  |     | \n"
+                  "  |     |\n"
+                  "  |     | \n"
+                  "  |     O \n"
+                  "  |    /|\ \n"
+                  "  |    / \ \n"
+                  "__|__\n")
+            print("Mauvaix choix. Tu as été pendu !!!\n")
+            print("Le mot était:",already_guessed,word)
+            play_loop()
+        
+        if word == '_' * lentgh:
+            print("Bravo ! Tu as trouvé le bon mot !")
+            play_loop()
+        
+        elif count != limit :
+            hangman()
+
+main()
+
+hangman()
+
+
+
 
 
 
