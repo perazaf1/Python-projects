@@ -44,14 +44,14 @@ def hangman():
     guess = input("C'est le mot du pendu : " + display + "Entrez votre choix : \n")
     guess = guess.strip()
     if len(guess.strip()) == 0 or len(guess.strip()) >= 2 or guess <= "9":
-        print("Mauvaischoix, Essaye une letrre \n")
+        print("Mauvais choix, Essaye une letrre \n")
         hangman()
     
-    elif guess in word :
+    elif guess in word:
         already_guessed.extend([guess])
         index = word.find(guess)
-        word = word [:index] = "_" + word[index + 1:]
-        display = display [:index] + guess + display [index + 1:]
+        word = word[:index] + "_" + word[index + 1:]
+        display = display[:index] + guess + display[index + 1:]
         print(display + "\n")
 
     elif guess in already_guessed :
