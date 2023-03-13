@@ -1,5 +1,12 @@
 import random
 import time
+print("\nBienvenue sur le jeu du Pendu !\n")
+name = input("Entre ton nom :  ")
+print(f"Bonjour {name}, je te souhaite bonne chance !")
+time.sleep(0.85)
+print("\n Jouons")
+time.sleep(0.85)
+
 
 def main():
     # déclaration des variables pour le jeu
@@ -131,8 +138,9 @@ def hangman():
             hangman()
 
 main()
-
 hangman()
+
+
 
 
 
