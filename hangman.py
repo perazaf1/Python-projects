@@ -44,7 +44,7 @@ def hangman():
     guess = input("C'est le mot du pendu : " + display + "Entrez votre choix : \n")
     guess = guess.strip()
     if len(guess.strip()) == 0 or len(guess.strip()) >= 2 or guess <= "9":
-        print("Mauvais choix, Essaye une letrre \n")
+        print("Mauvais choix, Essaye une lettre \n")
         hangman()
     
     elif guess in word:
@@ -55,7 +55,7 @@ def hangman():
         print(display + "\n")
 
     elif guess in already_guessed :
-        print("Essaye une autre lettre \n")
+        print("Essaye une autre lettre ! \n")
     
     else :
         count += 1
